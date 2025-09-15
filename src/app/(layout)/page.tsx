@@ -1,9 +1,13 @@
+import ProductsView from '@/components/products-view/ProductsView';
 import { memo } from 'react';
 
-const Home = () => {
+const Home = async() => {
+     const res = await fetch('https://api.errorchi.uz/product?limit=8')
+    const data = await res.json()
+    const products = data?.data?.allProducts
   return (
     <div className="Page">
-      <h2>Home Page</h2>
+      <ProductsView products={products}/>
     </div>
   );
 };

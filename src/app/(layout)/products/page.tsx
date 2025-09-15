@@ -1,11 +1,14 @@
-import { memo } from 'react';
+import ProductsView from '@/components/products-view/ProductsView';
 
-const Products = () => {
+const Products = async() => {
+   const res = await fetch('https://api.errorchi.uz/product')
+    const data = await res.json()
+    const products = data?.data?.allProducts
   return (
-    <div className="Page">
-      <h2>Products Page</h2>
-    </div>
+   <>
+    <ProductsView products={products}/>
+   </>
   );
 };
 
-export default memo(Products);
+export default Products;

@@ -1,3 +1,3 @@
 import axios from "axios";
 
-export const API = axios.create({ baseURL: "https://api.errorchi.uz/" });
+export const api = axios.create({ baseURL: "https://api.errorchi.uz/" });
