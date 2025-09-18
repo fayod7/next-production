@@ -13,10 +13,10 @@ const ProductImage:FC<Props> = (props:Props) => {
     const { title, image, id } = props
     const router = useRouter()
   return (
-    <div className="relative w-full h-full">
+    <div className="relative w-full h-full bg-transparent">
          {
             image && image.length > 0 ?
-            ( <Image onClick={() => router.push(`/products/${id}`)} className="h-full w-full object-cover hover:cursor-pointer" priority width={300} height={250} src={`https://api.errorchi.uz/product/image/${image}`} alt={title}/>)
+            ( <Image onClick={() => router.push(`/products/${id}`)} className="h-full w-full object-cover hover:cursor-pointer bg-transparent" priority fill src={`https://api.errorchi.uz/product/image/${image}`} alt={title}/>)
                 : 
                 (<div className="bg-gray-300 h-full w-full grid place-items-center"> 
                  <p className="text-[18px] text-center">No image</p>
