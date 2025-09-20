@@ -5,6 +5,7 @@ import { memo, useEffect, useState } from 'react';
 import SignIn from './SignIn';
 import logo from  '@/assets/shop-co-logo.svg'
 import Image from 'next/image';
+import { dashboard_link } from '@/links';
 const Header = () => {
 
    const [isScroll, setIsScroll] = useState<boolean>(false)
@@ -18,7 +19,7 @@ const Header = () => {
     })
   },[])
     const handleSignIn =  () => {
-        open('https://e-dashboard-blue.vercel.app/login')
+        open(`${dashboard_link}`)
     }
     const pathname = usePathname()
   return (

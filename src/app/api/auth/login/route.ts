@@ -6,7 +6,7 @@ export const POST = async (req:Request) => {
    const response =  await fetch('https://api.errorchi.uz/auth/signin', {
             method: 'POST', 
             headers: {
-                'Contnent-Type' : 'application/json'
+                'Content-Type' : 'application/json'
             }, 
             body: JSON.stringify(user)
     })

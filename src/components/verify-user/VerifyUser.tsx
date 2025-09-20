@@ -1,9 +1,12 @@
 'use client'
+import { dashboard_link } from '@/links'
 import { memo, useEffect, useState } from 'react'
 
 const VerifyUser = ({user}: {user:string}) => {
     const [error, setError] = useState<string | null>(null)
     useEffect(() => {
+        console.log(user);
+        
         fetch('/api/auth/login', { 
             method: 'POST', 
             headers: {
@@ -27,7 +30,10 @@ const VerifyUser = ({user}: {user:string}) => {
         <div className='text-center'>
             <h2 className='text-3xl'>Verificating your data...</h2>
             {
-                error && <button onClick={() => open('https://e-dashboard-blue.vercel.app/login')} className='text-red-500'>{error}</button> // vercel  qoy
+                error && <button onClick={() =>
+                     open(`${dashboard_link}`)
+                    
+                    } className='text-red-500'>{error}</button> // vercel  qoy
             }
         </div>
     </div>
