@@ -1,4 +1,4 @@
-import Me from '@/components/me/me';
+import Me from '@/components/me/Me';
 import { memo, ReactNode } from 'react';
 
 const Layout = ({children}:{children:ReactNode}) => {
