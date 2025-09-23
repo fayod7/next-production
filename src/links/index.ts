@@ -6,3 +6,5 @@ export const production_link = 'https://next-production-neon.vercel.app/'
 
 
 // export const production_link = 'localhost'
+
+export const api_url = 'https://api.errorchi.uz'

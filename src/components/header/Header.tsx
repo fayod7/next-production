@@ -1,13 +1,20 @@
 'use client'
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { memo, useEffect, useState } from 'react';
-import SignIn from './SignIn';
+import { FC, memo, useEffect, useState } from 'react';
 import logo from  '@/assets/shop-co-logo.svg'
 import Image from 'next/image';
 import { dashboard_link } from '@/links';
-const Header = () => {
+import HeaderActions from './HeaderActions';
 
+
+interface Props {
+  token: string | undefined
+  data: string | undefined
+}
+
+const Header:FC<Props> = (props) => {
+  const { token, data } = props
    const [isScroll, setIsScroll] = useState<boolean>(false)
   useEffect(() => {
     window.addEventListener('scroll', () => {
@@ -31,10 +38,11 @@ const Header = () => {
         <ul className="flex text-xl gap-5 max-sm:fixed max-sm:bottom-0 max-sm:left-0 max-sm:w-full max-sm:bg-white max-sm:justify-center max-sm:gap-4 max-sm:py-2 max-sm:border-t max-sm:border-gray-300 max-sm:z-40">
             <Link className={ pathname === '/' ? 'underline px-4 py-2' : 'px-4 py-2'} href={'/'}>Home</Link>
             <Link className={ pathname === '/products' ? 'underline px-4 py-2' : 'px-4 py-2'} href={'/products'}>Products</Link>
-            <Link className={ pathname === '/cart' ? 'underline px-4 py-2' : 'px-4 py-2'} href={'/cart'}>Cart</Link>
 
         </ul>
-            <SignIn handleSignIn={handleSignIn}/>
+        
+             <HeaderActions data={data} token={token} handleSignIn={handleSignIn}/>
+           
         </nav>
       
     </header>

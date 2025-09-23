@@ -9,12 +9,9 @@ interface Props{
 }
 
 const ProductsView:FC<Props> = async (props) => {
- const  {products}  = props
- console.log(products);
- 
-    
+ const  {products}  = props    
   return (
-    <div className="grid grid-cols-4 gap-3 container py-[30px] max-[990px]:grid-cols-3 max-[750px]:grid-cols-2 max-[470px]:grid-cols-1">
+    <div className="grid grid-cols-4 gap-4 container py-[30px] max-[990px]:grid-cols-3 max-[750px]:grid-cols-2 max-[470px]:grid-cols-1">
       {
         products?.map((product:IProduct) => (
             <div key={product?.id} className="flex flex-col gap-0.5 border-gray-200 bg-white overflow-hidden group"> 
